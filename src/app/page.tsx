@@ -1,3 +1,4 @@
+import Image from "next/image";
 export default function Home() {
   return (
     <main className="min-h-screen bg-gray-950 text-white">
@@ -28,8 +29,13 @@ export default function Home() {
 
       {/* Hero */}
       <section className="mx-auto flex max-w-6xl flex-col items-center px-6 py-24 text-center">
-        <div className="mb-8 h-40 w-40 rounded-full bg-gray-700" />
-
+        <Image
+          src="/profile.jpeg"
+          alt="Pieter Jacobus Vermeulen"
+          width={160}
+          height={160}
+          className="mb-8 rounded-full object-cover border-4 border-blue-500"
+        />
         <h1 className="text-5xl font-bold">Pieter Jacobus Vermeulen</h1>
 
         <p className="mt-4 text-2xl text-blue-400">Software Developer</p>
