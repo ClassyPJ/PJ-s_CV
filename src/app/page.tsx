@@ -1,65 +1,198 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
+    <main className="min-h-screen bg-gray-950 text-white">
+      {/* Navigation */}
+      <nav className="sticky top-0 bg-gray-900/90 backdrop-blur border-b border-gray-800">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+          <h1 className="text-xl font-bold">Pieter Vermeulen</h1>
+
+          <div className="flex gap-6 text-sm">
+            <a href="#about" className="hover:text-blue-400">
+              About
+            </a>
+            <a href="#skills" className="hover:text-blue-400">
+              Skills
+            </a>
+            <a href="#projects" className="hover:text-blue-400">
+              Projects
+            </a>
+            <a href="#education" className="hover:text-blue-400">
+              Education
+            </a>
+            <a href="#contact" className="hover:text-blue-400">
+              Contact
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero */}
+      <section className="mx-auto flex max-w-6xl flex-col items-center px-6 py-24 text-center">
+        <div className="mb-8 h-40 w-40 rounded-full bg-gray-700" />
+
+        <h1 className="text-5xl font-bold">Pieter Vermeulen</h1>
+
+        <p className="mt-4 text-2xl text-blue-400">Software Developer</p>
+
+        <p className="mt-6 max-w-2xl text-gray-300">
+          Passionate about building modern web applications, embedded systems,
+          and solving real-world problems using software and technology.
+        </p>
+
+        <div className="mt-10 flex flex-wrap justify-center gap-4">
+          <a
+            href="#projects"
+            className="rounded-lg bg-blue-600 px-6 py-3 hover:bg-blue-700"
+          >
+            View Projects
+          </a>
+
+          <a
+            href="/cv.pdf"
+            className="rounded-lg border border-gray-600 px-6 py-3 hover:bg-gray-800"
+          >
+            Download CV
+          </a>
+        </div>
+      </section>
+
+      {/* About */}
+      <section id="about" className="mx-auto max-w-6xl px-6 py-20">
+        <h2 className="mb-8 text-3xl font-bold">About Me</h2>
+
+        <p className="text-gray-300 leading-8">
+          Write your introduction here...
+        </p>
+      </section>
+
+      {/* Skills */}
+      <section id="skills" className="bg-gray-900 py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="mb-10 text-3xl font-bold">Technical Skills</h2>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <SkillCard
+              title="Languages"
+              items={["TypeScript", "JavaScript", "HTML", "CSS", "SQL"]}
+            />
+
+            <SkillCard
+              title="Frameworks"
+              items={["React", "Next.js", "Tailwind CSS"]}
+            />
+
+            <SkillCard
+              title="Tools"
+              items={["Git", "GitHub", "VS Code", "Vercel", "Linux"]}
+            />
+
+            <SkillCard title="Databases" items={["PostgreSQL", "Supabase"]} />
+          </div>
+        </div>
+      </section>
+
+      {/* Projects */}
+      <section id="projects" className="mx-auto max-w-6xl px-6 py-20">
+        <h2 className="mb-10 text-3xl font-bold">Projects</h2>
+
+        <div className="grid gap-8 md:grid-cols-2">
+          <ProjectCard
+            title="Water Monitoring System"
+            description="ESP32 project that monitors water flow, pressure and tank level."
+          />
+
+          <ProjectCard
+            title="Portfolio Website"
+            description="Personal website built with Next.js and Tailwind CSS."
+          />
+        </div>
+      </section>
+
+      {/* Education */}
+      <section id="education" className="bg-gray-900 py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="mb-10 text-3xl font-bold">Education</h2>
+
+          <div className="rounded-xl bg-gray-800 p-6">
+            <h3 className="text-xl font-semibold">
+              BSc Information Technology
+            </h3>
+
+            <p className="text-gray-400">Your University</p>
+
+            <p className="mt-2 text-gray-300">Graduation Year</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="mx-auto max-w-6xl px-6 py-20">
+        <h2 className="mb-10 text-3xl font-bold">Contact</h2>
+
+        <div className="space-y-3 text-lg">
+          <p>Email: your@email.com</p>
+
+          <p>
+            LinkedIn:{" "}
             <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="https://linkedin.com/in/yourname"
+              className="text-blue-400"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+              linkedin.com/in/yourname
+            </a>
+          </p>
+
+          <p>
+            GitHub:{" "}
+            <a href="https://github.com/yourusername" className="text-blue-400">
+              github.com/yourusername
+            </a>
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-gray-800 py-8 text-center text-gray-500">
+        © 2026 Pieter Vermeulen
+      </footer>
+    </main>
+  );
+}
+
+function SkillCard({ title, items }: { title: string; items: string[] }) {
+  return (
+    <div className="rounded-xl bg-gray-800 p-6">
+      <h3 className="mb-4 text-xl font-semibold">{title}</h3>
+
+      <ul className="space-y-2 text-gray-300">
+        {items.map((item) => (
+          <li key={item}>• {item}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function ProjectCard({
+  title,
+  description,
+}: {
+  title: string;
+  description: string;
+}) {
+  return (
+    <div className="rounded-xl border border-gray-800 p-6">
+      <h3 className="text-2xl font-semibold">{title}</h3>
+
+      <p className="mt-4 text-gray-300">{description}</p>
+
+      <div className="mt-6 flex gap-4">
+        <button className="rounded bg-blue-600 px-4 py-2">GitHub</button>
+
+        <button className="rounded border border-gray-600 px-4 py-2">
+          Live Demo
+        </button>
+      </div>
     </div>
   );
 }
