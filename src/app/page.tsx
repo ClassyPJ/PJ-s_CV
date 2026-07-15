@@ -128,8 +128,8 @@ export default function Home() {
 
         <div className="grid gap-8 md:grid-cols-2">
           <ProjectCard
-            title="Water Monitoring System"
-            description="ESP32 project that monitors water flow, pressure and tank level."
+            title="Clothing Shop Website"
+            description="Project to buy clothes of spesific company."
           />
 
           <ProjectCard
