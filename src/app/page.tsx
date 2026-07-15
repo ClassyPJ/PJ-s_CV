@@ -161,15 +161,15 @@ export default function Home() {
         <h2 className="mb-10 text-3xl font-bold">Contact</h2>
 
         <div className="space-y-3 text-lg">
-          <p>Email: </p>
+          <p>Email: pieterjacobusvermeulen@gmail.com</p>
 
           <p>
             LinkedIn:{" "}
             <a
-              href="https://linkedin.com/in/yourname"
+              href="https://www.linkedin.com/in/pieter-jacobus-vermeulen-2530382b7?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
               className="text-blue-400"
             >
-              linkedin.com/in/yourname
+              linkedin.com/in/pieter-jacobus-vermeulen
             </a>
           </p>
 
