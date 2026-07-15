@@ -175,8 +175,8 @@ export default function Home() {
 
           <p>
             GitHub:{" "}
-            <a href="https://github.com/yourusername" className="text-blue-400">
-              github.com/yourusername
+            <a href="https://github.com/ClassyPJ" className="text-blue-400">
+              github.com/ClassyPJ
             </a>
           </p>
         </div>
