@@ -4,7 +4,7 @@ export default function Home() {
       {/* Navigation */}
       <nav className="sticky top-0 bg-gray-900/90 backdrop-blur border-b border-gray-800">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <h1 className="text-xl font-bold">Pieter Vermeulen</h1>
+          <h1 className="text-xl font-bold">Pieter Jacobus Vermeulen</h1>
 
           <div className="flex gap-6 text-sm">
             <a href="#about" className="hover:text-blue-400">
@@ -30,7 +30,7 @@ export default function Home() {
       <section className="mx-auto flex max-w-6xl flex-col items-center px-6 py-24 text-center">
         <div className="mb-8 h-40 w-40 rounded-full bg-gray-700" />
 
-        <h1 className="text-5xl font-bold">Pieter Vermeulen</h1>
+        <h1 className="text-5xl font-bold">Pieter Jacobus Vermeulen</h1>
 
         <p className="mt-4 text-2xl text-blue-400">Software Developer</p>
 
@@ -61,7 +61,10 @@ export default function Home() {
         <h2 className="mb-8 text-3xl font-bold">About Me</h2>
 
         <p className="text-gray-300 leading-8">
-          Write your introduction here...
+          Dedicated Software Developer with strong skills in managing, problem
+          solving and improving. Currently pursuing a Bachelor of Science in
+          Information Technology at North-West University. Working towards
+          creating a bigger, beter and more complete future.
         </p>
       </section>
 
@@ -73,7 +76,17 @@ export default function Home() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             <SkillCard
               title="Languages"
-              items={["TypeScript", "JavaScript", "HTML", "CSS", "SQL"]}
+              items={[
+                "TypeScript",
+                "JavaScript",
+                "HTML",
+                "CSS",
+                "SQL",
+                "Python",
+                "Java",
+                "C#",
+                "C++",
+              ]}
             />
 
             <SkillCard
@@ -83,10 +96,28 @@ export default function Home() {
 
             <SkillCard
               title="Tools"
-              items={["Git", "GitHub", "VS Code", "Vercel", "Linux"]}
+              items={[
+                "Git",
+                "GitHub",
+                "VS Code",
+                "Vercel",
+                "Linux",
+                "Eclips",
+                "Visual Studio",
+                "Microsoft Office",
+              ]}
             />
 
-            <SkillCard title="Databases" items={["PostgreSQL", "Supabase"]} />
+            <SkillCard
+              title="Databases"
+              items={[
+                "PostgreSQL",
+                "Supabase",
+                "MySQL",
+                "Oracle Database",
+                "SQLite",
+              ]}
+            />
           </div>
         </div>
       </section>
@@ -118,9 +149,9 @@ export default function Home() {
               BSc Information Technology
             </h3>
 
-            <p className="text-gray-400">Your University</p>
+            <p className="text-gray-400">North-West University</p>
 
-            <p className="mt-2 text-gray-300">Graduation Year</p>
+            <p className="mt-2 text-gray-300">2027</p>
           </div>
         </div>
       </section>
@@ -130,7 +161,7 @@ export default function Home() {
         <h2 className="mb-10 text-3xl font-bold">Contact</h2>
 
         <div className="space-y-3 text-lg">
-          <p>Email: your@email.com</p>
+          <p>Email: </p>
 
           <p>
             LinkedIn:{" "}
@@ -153,7 +184,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="border-t border-gray-800 py-8 text-center text-gray-500">
-        © 2026 Pieter Vermeulen
+        © 2026 Pieter Jacobus Vermeulen
       </footer>
     </main>
   );
