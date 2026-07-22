@@ -54,7 +54,8 @@ export default function Home() {
           </a>
 
           <a
-            href="/cv.pdf"
+            href="/PJV_CV.pdf"
+            download
             className="rounded-lg border border-gray-600 px-6 py-3 hover:bg-gray-800"
           >
             Download CV
@@ -134,13 +135,9 @@ export default function Home() {
 
         <div className="grid gap-8 md:grid-cols-2">
           <ProjectCard
-            title="Clothing Shop Website"
-            description="Project to buy clothes of spesific company."
-          />
-
-          <ProjectCard
             title="Portfolio Website"
             description="Personal website built with Next.js and Tailwind CSS."
+            githubUrl="https://github.com/ClassyPJ/PJ-s_CV.git"
           />
         </div>
       </section>
@@ -157,7 +154,7 @@ export default function Home() {
 
             <p className="text-gray-400">North-West University</p>
 
-            <p className="mt-2 text-gray-300">2027</p>
+            <p className="mt-2 text-gray-300">currently obtaining</p>
           </div>
         </div>
       </section>
@@ -213,9 +210,11 @@ function SkillCard({ title, items }: { title: string; items: string[] }) {
 function ProjectCard({
   title,
   description,
+  githubUrl,
 }: {
   title: string;
   description: string;
+  githubUrl: string;
 }) {
   return (
     <div className="rounded-xl border border-gray-800 p-6">
@@ -224,11 +223,14 @@ function ProjectCard({
       <p className="mt-4 text-gray-300">{description}</p>
 
       <div className="mt-6 flex gap-4">
-        <button className="rounded bg-blue-600 px-4 py-2">GitHub</button>
-
-        <button className="rounded border border-gray-600 px-4 py-2">
-          Live Demo
-        </button>
+        <a
+          href={githubUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+        >
+          GitHub
+        </a>
       </div>
     </div>
   );
