@@ -111,13 +111,6 @@ export default function Home() {
 
         <div className="mt-10 flex flex-wrap justify-center gap-2">
           <a
-            href="#projects"
-            className="rounded-xl bg-blue-600 px-6 py-3 hover:bg-blue-700"
-          >
-            View Projects
-          </a>
-
-          <a
             href="/PJV_CV.pdf"
             download
             className="rounded-xl border border-gray-600 px-6 py-3 hover:bg-gray-800"
