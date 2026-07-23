@@ -1,28 +1,89 @@
+"use client";
+
 import Image from "next/image";
+import { Menu, X } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setMenuOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
-    <main className="min-h-screen bg-gray-950 text-white">
+    <main className="min-h-screen bg-gray-950 text-white scroll-smooth">
       {/* Navigation */}
-      <nav className="sticky top-0 bg-gray-900/90 backdrop-blur border-b border-gray-800">
+      <nav className="sticky top-0 z-50 bg-gray-900/90 backdrop-blur border-b border-gray-800">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <h1 className="text-xl font-bold">Pieter Jacobus Vermeulen</h1>
 
-          <div className="flex gap-6 text-sm">
-            <a href="#about" className="hover:text-blue-400">
-              About
-            </a>
-            <a href="#skills" className="hover:text-blue-400">
-              Skills
-            </a>
-            <a href="#projects" className="hover:text-blue-400">
-              Projects
-            </a>
-            <a href="#education" className="hover:text-blue-400">
-              Education
-            </a>
-            <a href="#contact" className="hover:text-blue-400">
-              Contact
-            </a>
+          <button
+            className="rounded-md p-2 transition-all duration-300 hover:bg-gray-800 hover:scale-105 active:scale-95"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle navigation menu"
+          >
+            {menuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
+        <div
+          className={`overflow-hidden transition-all duration-300 ease-in-out ${
+            menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className="mx-4 mt-2 rounded-xl border border-gray-800 bg-gray-900 shadow-2xl">
+            <div
+              className={`flex flex-col gap-2 px-6 py-4 transition-all duration-300 ${
+                menuOpen
+                  ? "translate-y-0 opacity-100"
+                  : "-translate-y-2 opacity-0"
+              }`}
+            >
+              <a
+                href="#about"
+                onClick={() => setMenuOpen(false)}
+                className="rounded-lg px-4 py-3 transition-all duration-200 hover:bg-gray-800 hover:text-blue-400"
+              >
+                About
+              </a>
+              <a
+                href="#skills"
+                onClick={() => setMenuOpen(false)}
+                className="rounded-lg px-4 py-3 transition-all duration-200 hover:bg-gray-800 hover:text-blue-400"
+              >
+                Skills
+              </a>
+              <a
+                href="#projects"
+                onClick={() => setMenuOpen(false)}
+                className="rounded-lg px-4 py-3 transition-all duration-200 hover:bg-gray-800 hover:text-blue-400"
+              >
+                Projects
+              </a>
+              <a
+                href="#education"
+                onClick={() => setMenuOpen(false)}
+                className="rounded-lg px-4 py-3 transition-all duration-200 hover:bg-gray-800 hover:text-blue-400"
+              >
+                Education
+              </a>
+              <a
+                href="#contact"
+                onClick={() => setMenuOpen(false)}
+                className="rounded-lg px-4 py-3 transition-all duration-200 hover:bg-gray-800 hover:text-blue-400"
+              >
+                Contact
+              </a>
+            </div>
           </div>
         </div>
       </nav>
@@ -45,7 +106,7 @@ export default function Home() {
           and solving real-world problems using software and technology.
         </p>
 
-        <div className="mt-10 flex flex-wrap justify-center gap-4">
+        <div className="mt-10 flex flex-wrap justify-center gap-2">
           <a
             href="#projects"
             className="rounded-lg bg-blue-600 px-6 py-3 hover:bg-blue-700"
@@ -222,7 +283,7 @@ function ProjectCard({
 
       <p className="mt-4 text-gray-300">{description}</p>
 
-      <div className="mt-6 flex gap-4">
+      <div className="mt-6 flex gap-2">
         <a
           href={githubUrl}
           target="_blank"
