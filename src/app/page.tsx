@@ -27,62 +27,65 @@ export default function Home() {
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <h1 className="text-xl font-bold">Pieter Jacobus Vermeulen</h1>
 
-          <button
-            className="rounded-md p-2 transition-all duration-300 hover:bg-gray-800 hover:scale-105 active:scale-95"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle navigation menu"
-          >
-            {menuOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
-        </div>
-        <div
-          className={`overflow-hidden transition-all duration-300 ease-in-out ${
-            menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-          }`}
-        >
-          <div className="mx-4 mt-2 rounded-xl border border-gray-800 bg-gray-900 shadow-2xl">
+          <div className="relative" ref={menuRef}>
+            <button
+              className="rounded-xl p-2 transition-all duration-300 hover:bg-gray-800 hover:scale-105 active:scale-95"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Toggle navigation menu"
+            >
+              {menuOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
+
             <div
-              className={`flex flex-col gap-2 px-6 py-4 transition-all duration-300 ${
+              className={`absolute right-0 mt-2 w-64 overflow-hidden rounded-xl border border-gray-800 bg-gray-900 shadow-2xl transition-all duration-300 ${
                 menuOpen
-                  ? "translate-y-0 opacity-100"
-                  : "-translate-y-2 opacity-0"
+                  ? "opacity-100 translate-y-0"
+                  : "pointer-events-none opacity-0 -translate-y-2"
               }`}
             >
-              <a
-                href="#about"
-                onClick={() => setMenuOpen(false)}
-                className="rounded-lg px-4 py-3 transition-all duration-200 hover:bg-gray-800 hover:text-blue-400"
+              <div
+                className={`flex flex-col gap-2 px-4 py-4 transition-all duration-300 ${
+                  menuOpen
+                    ? "translate-y-0 opacity-100"
+                    : "-translate-y-2 opacity-0"
+                }`}
               >
-                About
-              </a>
-              <a
-                href="#skills"
-                onClick={() => setMenuOpen(false)}
-                className="rounded-lg px-4 py-3 transition-all duration-200 hover:bg-gray-800 hover:text-blue-400"
-              >
-                Skills
-              </a>
-              <a
-                href="#projects"
-                onClick={() => setMenuOpen(false)}
-                className="rounded-lg px-4 py-3 transition-all duration-200 hover:bg-gray-800 hover:text-blue-400"
-              >
-                Projects
-              </a>
-              <a
-                href="#education"
-                onClick={() => setMenuOpen(false)}
-                className="rounded-lg px-4 py-3 transition-all duration-200 hover:bg-gray-800 hover:text-blue-400"
-              >
-                Education
-              </a>
-              <a
-                href="#contact"
-                onClick={() => setMenuOpen(false)}
-                className="rounded-lg px-4 py-3 transition-all duration-200 hover:bg-gray-800 hover:text-blue-400"
-              >
-                Contact
-              </a>
+                <a
+                  href="#about"
+                  onClick={() => setMenuOpen(false)}
+                  className="rounded-xl px-4 py-3 transition-all duration-200 hover:bg-gray-800 hover:text-blue-400"
+                >
+                  About
+                </a>
+                <a
+                  href="#skills"
+                  onClick={() => setMenuOpen(false)}
+                  className="rounded-xl px-4 py-3 transition-all duration-200 hover:bg-gray-800 hover:text-blue-400"
+                >
+                  Skills
+                </a>
+                <a
+                  href="#projects"
+                  onClick={() => setMenuOpen(false)}
+                  className="rounded-xl px-4 py-3 transition-all duration-200 hover:bg-gray-800 hover:text-blue-400"
+                >
+                  Projects
+                </a>
+                <a
+                  href="#education"
+                  onClick={() => setMenuOpen(false)}
+                  className="rounded-xl px-4 py-3 transition-all duration-200 hover:bg-gray-800 hover:text-blue-400"
+                >
+                  Education
+                </a>
+                <a
+                  href="#contact"
+                  onClick={() => setMenuOpen(false)}
+                  className="rounded-xl px-4 py-3 transition-all duration-200 hover:bg-gray-800 hover:text-blue-400"
+                >
+                  Contact
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -109,7 +112,7 @@ export default function Home() {
         <div className="mt-10 flex flex-wrap justify-center gap-2">
           <a
             href="#projects"
-            className="rounded-lg bg-blue-600 px-6 py-3 hover:bg-blue-700"
+            className="rounded-xl bg-blue-600 px-6 py-3 hover:bg-blue-700"
           >
             View Projects
           </a>
@@ -117,7 +120,7 @@ export default function Home() {
           <a
             href="/PJV_CV.pdf"
             download
-            className="rounded-lg border border-gray-600 px-6 py-3 hover:bg-gray-800"
+            className="rounded-xl border border-gray-600 px-6 py-3 hover:bg-gray-800"
           >
             Download CV
           </a>
@@ -288,7 +291,7 @@ function ProjectCard({
           href={githubUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+          className="rounded-xl bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
         >
           GitHub
         </a>
