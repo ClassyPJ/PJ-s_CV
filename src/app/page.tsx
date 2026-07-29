@@ -23,13 +23,21 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gray-950 text-white scroll-smooth">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-gray-900/90 backdrop-blur border-b border-gray-800">
+      <nav className="sticky top-0 z-50 bg-gray-950/80 backdrop-blur border-b border-gray-800">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <h1 className="text-xl font-bold">Pieter Jacobus Vermeulen</h1>
 
           <div className="relative" ref={menuRef}>
             <button
-              className="rounded-xl p-2 transition-all duration-300 hover:bg-gray-800 hover:scale-105 active:scale-95"
+              className="
+              border
+              border-gray-800
+              p-2
+              transition-all
+              duration-200
+              hover:border-blue-500
+              hover:bg-gray-800
+              "
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle navigation menu"
             >
@@ -37,7 +45,7 @@ export default function Home() {
             </button>
 
             <div
-              className={`absolute right-0 mt-2 w-64 overflow-hidden rounded-xl border border-gray-800 bg-gray-900 shadow-2xl transition-all duration-300 ${
+              className={`absolute right-0 mt-px w-64 overflow-hidden rounded-none border border-gray-800 bg-gray-900 transition-all duration-300 ${
                 menuOpen
                   ? "opacity-100 translate-y-0"
                   : "pointer-events-none opacity-0 -translate-y-2"
@@ -53,35 +61,35 @@ export default function Home() {
                 <a
                   href="#about"
                   onClick={() => setMenuOpen(false)}
-                  className="rounded-xl px-4 py-3 transition-all duration-200 hover:bg-gray-800 hover:text-blue-400"
+                  className="rounded-none px-4 py-3 transition-all duration-200 hover:bg-gray-800 hover:text-blue-400"
                 >
                   About
                 </a>
                 <a
                   href="#skills"
                   onClick={() => setMenuOpen(false)}
-                  className="rounded-xl px-4 py-3 transition-all duration-200 hover:bg-gray-800 hover:text-blue-400"
+                  className="rounded-none px-4 py-3 transition-all duration-200 hover:bg-gray-800 hover:text-blue-400"
                 >
                   Skills
                 </a>
                 <a
                   href="#projects"
                   onClick={() => setMenuOpen(false)}
-                  className="rounded-xl px-4 py-3 transition-all duration-200 hover:bg-gray-800 hover:text-blue-400"
+                  className="rounded-none px-4 py-3 transition-all duration-200 hover:bg-gray-800 hover:text-blue-400"
                 >
                   Projects
                 </a>
                 <a
                   href="#education"
                   onClick={() => setMenuOpen(false)}
-                  className="rounded-xl px-4 py-3 transition-all duration-200 hover:bg-gray-800 hover:text-blue-400"
+                  className="rounded-none px-4 py-3 transition-all duration-200 hover:bg-gray-800 hover:text-blue-400"
                 >
                   Education
                 </a>
                 <a
                   href="#contact"
                   onClick={() => setMenuOpen(false)}
-                  className="rounded-xl px-4 py-3 transition-all duration-200 hover:bg-gray-800 hover:text-blue-400"
+                  className="rounded-none px-4 py-3 transition-all duration-200 hover:bg-gray-800 hover:text-blue-400"
                 >
                   Contact
                 </a>
@@ -91,6 +99,7 @@ export default function Home() {
         </div>
       </nav>
 
+
       {/* Hero */}
       <section className="mx-auto flex max-w-6xl flex-col items-center px-6 py-24 text-center">
         <Image
@@ -98,11 +107,13 @@ export default function Home() {
           alt="Pieter Jacobus Vermeulen"
           width={160}
           height={160}
-          className="mb-8 rounded-full object-cover border-4 border-blue-500"
+          className="mb-8 rounded-none object-cover border border-gray-700"
         />
-        <h1 className="text-5xl font-bold">Pieter Jacobus Vermeulen</h1>
 
-        <p className="mt-4 text-2xl text-blue-400">Software Developer</p>
+        <p className="mb-4 text-xs uppercase tracking-[0.3em] text-gray-500">
+        SOFTWARE ENGINEER • WEB DEVELOPER
+        </p>
+        <h1 className="text-5xl font-bold">Pieter Jacobus Vermeulen</h1>
 
         <p className="mt-6 max-w-2xl text-gray-300">
           Passionate about building modern web applications, embedded systems,
@@ -113,7 +124,7 @@ export default function Home() {
           <a
             href="/PJV_CV.pdf"
             download
-            className="rounded-xl border border-gray-600 px-6 py-3 hover:bg-gray-800"
+            className="rounded-none border border-gray-700 bg-gray-900 px-6 py-3 transition-colors duration-200 hover:border-blue-500 hover:bg-gray-800"
           >
             Download CV
           </a>
@@ -121,35 +132,35 @@ export default function Home() {
       </section>
 
       {/* About */}
-      <section id="about" className="mx-auto max-w-6xl px-6 py-20">
-        <h2 className="mb-8 text-3xl font-bold">About Me</h2>
-
-        <p className="text-gray-300 leading-8">
+      <section id="about" className="mx-auto max-w-6xl px-6 py-24">
+        <h2 className="mb-10 text-4xl font-semibold tracking-tight">About Me</h2>
+        <div className="mb-9 h-px w-69 bg-gray-800" />
+        <p className="max-w-3xl text-gray-300 leading-8">
           Dedicated Software Developer with strong skills in managing, problem
           solving and improving. Currently pursuing a Bachelor of Science in
           Information Technology at North-West University. Working towards
-          creating a bigger, beter and more complete future.
+          creating a bigger, better and more complete future.
         </p>
       </section>
 
       {/* Skills */}
-      <section id="skills" className="bg-gray-900 py-20">
+      <section id="skills" className="bg-gray-900 py-24">
         <div className="mx-auto max-w-6xl px-6">
-          <h2 className="mb-10 text-3xl font-bold">Technical Skills</h2>
-
+          <h2 className="mb-10 text-4xl font-semibold tracking-tight">Technical Skills</h2>
+          <div className="mb-9 h-px w-69 bg-gray-800" />
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             <SkillCard
               title="Languages"
               items={[
                 "TypeScript",
                 "JavaScript",
+                "Python",
                 "HTML",
+                "Java",
                 "CSS",
                 "SQL",
-                "Python",
-                "Java",
+                "C++",          
                 "C#",
-                "C++",
               ]}
             />
 
@@ -166,7 +177,7 @@ export default function Home() {
                 "VS Code",
                 "Vercel",
                 "Linux",
-                "Eclips",
+                "Eclipse",
                 "Visual Studio",
                 "Microsoft Office",
               ]}
@@ -187,9 +198,9 @@ export default function Home() {
       </section>
 
       {/* Projects */}
-      <section id="projects" className="mx-auto max-w-6xl px-6 py-20">
-        <h2 className="mb-10 text-3xl font-bold">Projects</h2>
-
+      <section id="projects" className="mx-auto max-w-6xl px-6 py-24">
+        <h2 className="mb-10 text-4xl font-semibold tracking-tight">Projects</h2>
+        <div className="mb-9 h-px w-69 bg-gray-800" />
         <div className="grid gap-8 md:grid-cols-2">
           <ProjectCard
             title="Portfolio Website"
@@ -200,34 +211,34 @@ export default function Home() {
       </section>
 
       {/* Education */}
-      <section id="education" className="bg-gray-900 py-20">
+      <section id="education" className="bg-gray-900 py-24">
         <div className="mx-auto max-w-6xl px-6">
-          <h2 className="mb-10 text-3xl font-bold">Education</h2>
-
-          <div className="rounded-xl bg-gray-800 p-6">
+          <h2 className="mb-10 text-4xl font-semibold tracking-tight">Education</h2>
+          <div className="mb-9 h-px w-69 bg-gray-800" />
+          <div className="rounded-none border border-gray-800 bg-gray-900 p-6 ">
             <h3 className="text-xl font-semibold">
               BSc Information Technology
             </h3>
 
             <p className="text-gray-400">North-West University</p>
 
-            <p className="mt-2 text-gray-300">currently obtaining</p>
+            <p className="mt-2 text-gray-300">Currently studying</p>
           </div>
         </div>
       </section>
 
       {/* Contact */}
-      <section id="contact" className="mx-auto max-w-6xl px-6 py-20">
-        <h2 className="mb-10 text-3xl font-bold">Contact</h2>
-
-        <div className="space-y-3 text-lg">
+      <section id="contact" className="mx-auto max-w-6xl px-6 py-24">
+        <h2 className="mb-10 text-4xl font-semibold tracking-tight">Contact</h2>
+        <div className="mb-9 h-px w-69 bg-gray-800" />
+        <div className="max-w-xl space-y-4 text-lg">
           <p>Email: pieterjacobusvermeulen@gmail.com</p>
 
           <p>
             LinkedIn:{" "}
             <a
               href="https://www.linkedin.com/in/pieter-jacobus-vermeulen-2530382b7?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
-              className="text-blue-400"
+              className="text-blue-400 transition-colors duration-200 hover:text-blue-300"
             >
               linkedin.com/in/pieter-jacobus-vermeulen
             </a>
@@ -235,7 +246,7 @@ export default function Home() {
 
           <p>
             GitHub:{" "}
-            <a href="https://github.com/ClassyPJ" className="text-blue-400">
+            <a href="https://github.com/ClassyPJ" className="text-blue-400 transition-colors duration-200 hover:text-blue-300">
               github.com/ClassyPJ
             </a>
           </p>
@@ -252,12 +263,12 @@ export default function Home() {
 
 function SkillCard({ title, items }: { title: string; items: string[] }) {
   return (
-    <div className="rounded-xl bg-gray-800 p-6">
+    <div className="rounded-none border border-gray-800 bg-gray-900 p-6  transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40">
       <h3 className="mb-4 text-xl font-semibold">{title}</h3>
 
       <ul className="space-y-2 text-gray-300">
         {items.map((item) => (
-          <li key={item}>• {item}</li>
+          <li key={item}>☰ {item}</li>
         ))}
       </ul>
     </div>
@@ -274,7 +285,7 @@ function ProjectCard({
   githubUrl: string;
 }) {
   return (
-    <div className="rounded-xl border border-gray-800 p-6">
+    <div className="rounded-none border border-gray-800 bg-gray-900 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40">
       <h3 className="text-2xl font-semibold">{title}</h3>
 
       <p className="mt-4 text-gray-300">{description}</p>
@@ -284,7 +295,18 @@ function ProjectCard({
           href={githubUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-xl bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+          className="
+          border
+          border-gray-700
+          bg-gray-900
+          px-5
+          py-3
+          rounded-none
+          transition-colors
+          duration-200
+          hover:border-blue-500
+          hover:text-blue-400
+          "
         >
           GitHub
         </a>
